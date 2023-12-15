@@ -6,7 +6,7 @@ function load()
     document.getElementById("rbtn").style.backgroundColor="black";
     document.getElementById('startbtn').innerHTML="Start";
     document.getElementById("scorebtn").disabled=true;
-    m=0;
+    m=-1;
 
 
 }
@@ -27,9 +27,9 @@ function randomcolor()
     document.getElementById('rbtn').style.backgroundColor=col2;
     const division=["lbtn","rbtn"];
     const div1=division[Math.floor(Math.random()*division.length)];
-    document.getElementById(div1).innerHTML=text;  
-    
-   
+    document.getElementById(div1).innerHTML=text; 
+    const x=document.getElementById("lbtn"); 
+    m=m+1;   
 }
 function score()
 { 
