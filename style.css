@@ -8,7 +8,7 @@ background-color: rgb(20,20,20);
 #ldiv
 {
     width: 50%;
-    height: 80rem;
+    height: 40rem;
     background-color: rgb(0, 0, 0);
     float: left;
 
@@ -17,7 +17,7 @@ background-color: rgb(20,20,20);
 #rdiv
 {
     width: 50%;
-    height: 80rem;
+    height: 40rem;
     background-color: rgb(0, 0, 0);
     float: right;
 }
