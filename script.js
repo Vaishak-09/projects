@@ -5,6 +5,7 @@ function load()
     document.getElementById("lbtn").style.backgroundColor="black";
     document.getElementById("rbtn").style.backgroundColor="black";
     document.getElementById('startbtn').innerHTML="Start";
+    document.getElementById("scorebtn").disabled=true;
     m=0;
 
 
@@ -27,8 +28,9 @@ function randomcolor()
     const division=["lbtn","rbtn"];
     const div1=division[Math.floor(Math.random()*division.length)];
     document.getElementById(div1).innerHTML=text;  
+    
+   
 }
-
 function score()
 { 
 window.alert('score='+m);
@@ -36,7 +38,7 @@ window.alert('score='+m);
 
 function start()
 { 
-    
+    document.getElementById("scorebtn").disabled=false;
     if(document.getElementById('startbtn').innerHTML=="Stop n show score")
     {  
         score();
