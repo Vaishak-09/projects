@@ -2,6 +2,11 @@ function load()
 {
     document.getElementById("lbtn").disabled=true;
     document.getElementById("rbtn").disabled=true;
+    document.getElementById("ldiv").style.backgroundColor="black";
+    document.getElementById("rdiv").style.backgroundColor="black";
+    document.getElementById('startbtn').innerHTML="Start";
+    m=0;
+
 
 }
 function changecolor(a,b)
@@ -11,6 +16,8 @@ function changecolor(a,b)
     if(m>5)
     {
         score();
+        load();
+        
     }
     else{
     m=m+1;}
@@ -26,19 +33,18 @@ window.alert('score='+m);
 function start()
 {   if(document.getElementById('startbtn').innerHTML=="Stop n show score")
     {  
-         
-        document.getElementById('startbtn').innerHTML="Start";
-         score();
-    }
+        score();
+        load();
+     }
     
     else if(document.getElementById('startbtn').innerHTML=="Start")
     {
         document.getElementById("lbtn").disabled=false;
         document.getElementById("rbtn").disabled=false;
         document.getElementById('startbtn').innerHTML="Stop n show score";
-    }
     document.getElementById('ldiv').style.backgroundColor='rgb(10,255,10)';
     document.getElementById('rdiv').style.backgroundColor='rgb(0,0,255)';
-    m=0;
+    
+    }
 }
 
