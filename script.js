@@ -2,28 +2,32 @@ function load()
 {
     document.getElementById("lbtn").disabled=true;
     document.getElementById("rbtn").disabled=true;
-    document.getElementById("ldiv").style.backgroundColor="black";
-    document.getElementById("rdiv").style.backgroundColor="black";
+    document.getElementById("lbtn").style.backgroundColor="black";
+    document.getElementById("rbtn").style.backgroundColor="black";
     document.getElementById('startbtn').innerHTML="Start";
     m=0;
 
 
 }
-function changecolor(a,b)
-{ 
-    document.getElementById('ldiv').style.backgroundColor=a;
-    document.getElementById('rdiv').style.backgroundColor=b;
-    if(m>5)
+function randomcolor()
+{   
+    document.getElementById("lbtn").innerHTML="";
+    document.getElementById("rbtn").innerHTML="";
+    const colors=["green","blue","red","white","yellow","grey","brown"];
+    const col1=colors[Math.floor(Math.random()*colors.length)];
+    const col2=colors[Math.floor(Math.random()*colors.length)];
+    while(col1==col2)
     {
-        score();
-        load();
-        
+        const col2=colors[Math.floor(Math.random()*colors.length)];
     }
-    else{
-    m=m+1;}
-   
+    const texts=[col1,col2];
+    const text=texts[Math.floor(Math.random()*texts.length)];
+    document.getElementById('lbtn').style.backgroundColor=col1;
+    document.getElementById('rbtn').style.backgroundColor=col2;
+    const division=["lbtn","rbtn"];
+    const div1=division[Math.floor(Math.random()*division.length)];
+    document.getElementById(div1).innerHTML=text;  
 }
-
 
 function score()
 { 
@@ -31,7 +35,9 @@ window.alert('score='+m);
 }
 
 function start()
-{   if(document.getElementById('startbtn').innerHTML=="Stop n show score")
+{ 
+    
+    if(document.getElementById('startbtn').innerHTML=="Stop n show score")
     {  
         score();
         load();
@@ -42,9 +48,13 @@ function start()
         document.getElementById("lbtn").disabled=false;
         document.getElementById("rbtn").disabled=false;
         document.getElementById('startbtn').innerHTML="Stop n show score";
-    document.getElementById('ldiv').style.backgroundColor='rgb(10,255,10)';
-    document.getElementById('rdiv').style.backgroundColor='rgb(0,0,255)';
+    randomcolor();
     
     }
 }
 
+clearbtn()
+{
+    document.getElementById("lbtn").innerHTML="";
+    document.getElementById("rbtn").innerHTML="";
+}
