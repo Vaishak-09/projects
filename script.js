@@ -75,6 +75,7 @@ function lrandomcolor()
     else
     {
          alert("uffffff!! wrong color");
+         score();
     }
 }
 function rrandomcolor()
@@ -102,6 +103,7 @@ function rrandomcolor()
     else
     {
         alert("ufffff!!!!! wrong color");
+        score();
     }
 }
 function checkans(a,d)
@@ -114,7 +116,6 @@ function checkans(a,d)
         return 1;
     }
     else{
-        score();
         load();
         return 0;
     }
