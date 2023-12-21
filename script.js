@@ -29,7 +29,7 @@ function start()
         document.getElementById('startbtn').innerHTML="Stop n show score";
         document.getElementById("lbtn").innerHTML="";
     document.getElementById("rbtn").innerHTML="";
-    const colors=["green","blue","red","white","yellow","grey","brown"];
+    const colors=["green","blue","red","white","yellow","grey","brown","orange","pink"];
     const col1=colors[Math.floor(Math.random()*colors.length)];
     const col2=colors[Math.floor(Math.random()*colors.length)];
     while(col1==col2)
@@ -37,7 +37,7 @@ function start()
         col2=colors[Math.floor(Math.random()*colors.length)];
     }
     const texts=[col1,col2];
-     text=texts[Math.floor(Math.random()*texts.length)];
+    text=texts[Math.floor(Math.random()*texts.length)];
     document.getElementById('lbtn').style.backgroundColor=col1;
     document.getElementById('rbtn').style.backgroundColor=col2;
     const division=["lbtn","rbtn"];
@@ -66,13 +66,16 @@ function randomcolor()
 {
     document.getElementById("lbtn").innerHTML="";
     document.getElementById("rbtn").innerHTML="";
-    const colors=["green","blue","red","white","yellow","grey","brown"];
+    const colors=["green","blue","red","white","yellow","grey","brown","orange","pink"];
     const col1=colors[Math.floor(Math.random()*colors.length)];
     const col2=colors[Math.floor(Math.random()*colors.length)];
-    while(col1==col2)
+    if(col1==col2)
     {
-        col2=colors[Math.floor(Math.random()*colors.length)];
+        randomcolor();
+        
     }
+    else
+    {
     const texts=[col1,col2];
     text=texts[Math.floor(Math.random()*texts.length)];
     document.getElementById('lbtn').style.backgroundColor=col1;
@@ -80,6 +83,7 @@ function randomcolor()
     const division=["lbtn","rbtn"];
     const div1=division[Math.floor(Math.random()*division.length)];
     document.getElementById(div1).innerHTML=text;
+    }
 }
 function checkans(a,d)
 {  
