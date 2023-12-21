@@ -71,7 +71,7 @@ function randomcolor()
     const col2=colors[Math.floor(Math.random()*colors.length)];
     while(col1==col2)
     {
-        const col2=colors[Math.floor(Math.random()*colors.length)];
+        col2=colors[Math.floor(Math.random()*colors.length)];
     }
     const texts=[col1,col2];
     text=texts[Math.floor(Math.random()*texts.length)];
