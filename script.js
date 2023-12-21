@@ -17,9 +17,6 @@ function start()
     
     if(document.getElementById('startbtn').innerHTML=="Stop n show score")
     {   
-        document.getElementById("scorebtn").disabled=true;
-        document.getElementById("lbtn").innerHTML="";
-        document.getElementById("rbtn").innerHTML="";
         score();
         load();
      }
@@ -37,7 +34,7 @@ function start()
     const col2=colors[Math.floor(Math.random()*colors.length)];
     while(col1==col2)
     {
-        const col2=colors[Math.floor(Math.random()*colors.length)];
+        col2=colors[Math.floor(Math.random()*colors.length)];
     }
     const texts=[col1,col2];
      text=texts[Math.floor(Math.random()*texts.length)];
@@ -49,41 +46,24 @@ function start()
      
     }
 }
-function lrandomcolor()
+function lclick()
 {   
     x=checkans("lbtn",text);
     if(x==1)
     {
-    document.getElementById("lbtn").click=false;
-    document.getElementById("lbtn").innerHTML="";
-    document.getElementById("rbtn").innerHTML="";
-    const colors=["green","blue","red","white","yellow","grey","brown"];
-    const col1=colors[Math.floor(Math.random()*colors.length)];
-    const col2=colors[Math.floor(Math.random()*colors.length)];
-    while(col1==col2)
-    {
-        const col2=colors[Math.floor(Math.random()*colors.length)];
+     randomcolor();
     }
-    const texts=[col1,col2];
-    text=texts[Math.floor(Math.random()*texts.length)];
-    document.getElementById('lbtn').style.backgroundColor=col1;
-    document.getElementById('rbtn').style.backgroundColor=col2;
-    const division=["lbtn","rbtn"];
-    const div1=division[Math.floor(Math.random()*division.length)];
-    document.getElementById(div1).innerHTML=text;  
-    }
-    else
-    {
-         alert("uffffff!! wrong color");
-         score();
-         load();
-    }
+   
 }
-function rrandomcolor()
+function rclick()
 {   x=checkans("rbtn",text);
     if(x==1)
     {
-    document.getElementById("lbtn").click=false;
+      randomcolor();
+    }
+}
+function randomcolor()
+{
     document.getElementById("lbtn").innerHTML="";
     document.getElementById("rbtn").innerHTML="";
     const colors=["green","blue","red","white","yellow","grey","brown"];
@@ -99,14 +79,7 @@ function rrandomcolor()
     document.getElementById('rbtn').style.backgroundColor=col2;
     const division=["lbtn","rbtn"];
     const div1=division[Math.floor(Math.random()*division.length)];
-    document.getElementById(div1).innerHTML=text;  
-    }
-    else
-    {
-        alert("ufffff!!!!! wrong color");
-        score();
-        load();
-    }
+    document.getElementById(div1).innerHTML=text;
 }
 function checkans(a,d)
 {  
@@ -119,8 +92,14 @@ function checkans(a,d)
     }
     else{
         
-        return 0;
+        wrongans();
     }
+}
+function wrongans()
+{
+    alert("ufffff!!!!! wrong color");
+    score();
+    load();
 }
 function score()
 { 

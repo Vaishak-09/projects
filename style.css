@@ -39,6 +39,7 @@ background-color: rgb(20,20,20);
     color: rgb(0, 0, 0);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 25px;
+    font-weight: bolder;
     float: left;
 }
 #startbtn:active
