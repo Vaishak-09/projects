@@ -32,10 +32,13 @@ function start()
     const colors=["green","blue","red","white","yellow","grey","brown","orange","pink"];
     const col1=colors[Math.floor(Math.random()*colors.length)];
     const col2=colors[Math.floor(Math.random()*colors.length)];
-    while(col1==col2)
+    if(col1==col2)
     {
-        col2=colors[Math.floor(Math.random()*colors.length)];
+        randomcolor();
+        
     }
+    else
+    {
     const texts=[col1,col2];
     text=texts[Math.floor(Math.random()*texts.length)];
     document.getElementById('lbtn').style.backgroundColor=col1;
@@ -45,6 +48,7 @@ function start()
     document.getElementById(div1).innerHTML=text;
      
     }
+}
 }
 function lclick()
 {   
