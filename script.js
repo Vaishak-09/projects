@@ -1,5 +1,5 @@
 let text="";
-let x=0,y=0,s=0,ps=0,fs=0,sdif=0,flag=0;
+let x=0,y=0,s=0,ps=0,fs=0,sdif=0,flag=0,t=3;
 function load()
 {
     flag=0;
@@ -24,8 +24,8 @@ function start()
     
     else if(document.getElementById('startbtn').innerHTML=="Start")
     {
-        alert("Choose the correct color within 2 Seconds");
-
+        alert("Choose the correct color within given time");
+        setTimeout(startanimtion,0)
         let d=new Date();
         fs=d.getSeconds();
         document.getElementById("scorebtn").disabled=false;
@@ -57,6 +57,7 @@ function start()
 }
 function lclick()
 {   
+    clearanimation();
     y=checktime();
     if(y==1)
     {
@@ -70,6 +71,7 @@ function lclick()
 }
 function rclick()
 { 
+    clearanimation();
     y=checktime();
     if(y==1)
     {
@@ -129,7 +131,7 @@ function checktime()
         sdif=s-ps;
     }
     ps=s;
-    if(sdif<=2)
+    if(sdif<=t)
     {
         return 1;
     }
@@ -147,6 +149,15 @@ function checkans(a,d)
     e=document.getElementById(a).style.backgroundColor;
     if(e==d)
     {
+        setTimeout(startanimtion,0)
+        if(m>20)
+        {
+            t=1;
+        }
+        else if(m>5)
+        {
+            t=2;
+        }
         m=m+1;
         return 1;
     }
@@ -154,6 +165,14 @@ function checkans(a,d)
         
         wrongans();
     }
+}
+function startanimtion()
+{
+    document.getElementById("bar").style.animation="progress "+t+"s linear";
+}
+function clearanimation()
+{
+    document.getElementById("bar").style.animation="";
 }
 function wrongans()
 {
