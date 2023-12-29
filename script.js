@@ -3,6 +3,7 @@ let x=0,y=0,s=0,ps=0,fs=0,sdif=0,flag=0,t=3;
 function load()
 {
     flag=0;
+    t=3;
     document.getElementById("lbtn").disabled=true;
     document.getElementById("rbtn").disabled=true;
     document.getElementById("lbtn").innerHTML="";
@@ -24,7 +25,7 @@ function start()
     
     else if(document.getElementById('startbtn').innerHTML=="Start")
     {
-        alert("Choose the correct color within given time");
+        alert("Choose the correct color within given time\nkeyboard controls:\n1->selecting left color\n2->selecting right color");
         setTimeout(startanimtion,0)
         let d=new Date();
         fs=d.getSeconds();
@@ -185,5 +186,18 @@ function score()
 window.alert('score='+m);
 }
 
+/*keyboard controls*/
+document.addEventListener("keydown",
+function(e)
+{
+    if(e.key=='1')
+    {
+        lclick();
+    }
+    if(e.key=='2')
+    {
+        rclick();
+    }
+})
 
 

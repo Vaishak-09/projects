@@ -1,20 +1,20 @@
 body
 {
-background-color: rgb(20,20,20);
+background-color:black;
 }
 #container
 {
     width: 100%;
     height: 2em;
     border-radius: 5px;
-    border: 2px solid blue;
+    border: 2px solid rgb(255, 255, 255);
 }
 
 #bar
 {
     width: 0%;
     height: 100%;
-    background-color: rgb(0, 255, 255);
+    background-color: rgb(0, 255, 21);
     border-radius: 5px;
     
 }
@@ -24,6 +24,7 @@ background-color: rgb(20,20,20);
     }
 
     100%{
+        background-color: rgb(255, 8, 0);
         width: 100%;
     }
 }
@@ -33,6 +34,7 @@ background-color: rgb(20,20,20);
     height: 40rem;
     background-color: rgb(0, 0, 0);
     float: left;
+    
 }
 #rdiv
 {
@@ -47,6 +49,10 @@ background-color: rgb(20,20,20);
     height: 100%;
     background-color: transparent;
     font-size: large;
+    
+    border-radius: 5px;
+
+   
 }
 #rbtn
 {
@@ -54,6 +60,9 @@ background-color: rgb(20,20,20);
     height: 100%;
     background-color: transparent;
     font-size: large;
+    border-radius: 5px;
+
+
 }
 #startbtn
 {
@@ -66,6 +75,7 @@ background-color: rgb(20,20,20);
     font-size: 25px;
     font-weight: bolder;
     float: left;
+
 }
 #startbtn:active
 {
@@ -73,7 +83,8 @@ background-color: rgb(20,20,20);
     opacity: 0.5;  
 }
 #scorebtn
-{
+{   
+
     width: 50%;
     height:70px;
     float: right;
